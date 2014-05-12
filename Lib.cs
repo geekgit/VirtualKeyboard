@@ -17,7 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WindowsInput;
 
-namespace WpfApplication1
+namespace VirtualKeyboard
 {
     public static class Lib
     {
