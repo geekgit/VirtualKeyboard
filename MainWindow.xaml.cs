@@ -32,13 +32,6 @@ namespace VirtualKeyboard
             Scan();
             RenderButtons();
         }
-        public Window GetWindowFromXAML(string XAMLPath)
-        {
-            var reader = new StreamReader(XAMLPath);
-            var xmlReader = XmlReader.Create(reader);
-            var newWindow = XamlReader.Load(xmlReader) as Window;
-            return newWindow;
-        }
         public void Scan()
         {
             string[] files=Directory.GetFiles(Directory.GetCurrentDirectory(), "*.xaml");
@@ -46,12 +39,31 @@ namespace VirtualKeyboard
             {
                 try
                 {
-                    Window W = GetWindowFromXAML(path);
+                    Window W = Lib.GetWindowFromXAML(path);
                     Layouts.Add(W);
                 }
                 catch (Exception E)
                 {
                     MessageBox.Show(E.Message);
+                }
+            }
+        }
+        public void BindActions(Window w)
+        {
+            ArrayList controls = Lib.GetComponentFromWindow(w);
+            foreach (object obj in controls)
+            {
+                Button button = obj as Button;
+                if (button == null) continue;
+                string tag = (string)button.Tag;
+                try
+                {
+                    int code = int.Parse(tag);
+                    WindowsInput.VirtualKeyCode vkc = (WindowsInput.VirtualKeyCode)code;
+                    button.Click += (o, k) => Lib.IS_Press(vkc);
+                }
+                catch (Exception E)
+                {
                 }
             }
         }
@@ -62,7 +74,7 @@ namespace VirtualKeyboard
                 string title = layout.Title;
                 Button B = new Button();
                 B.Content = title;
-                B.Click += (o, k) => layout.Show();
+                B.Click += (o, k) => { BindActions(layout);  layout.Show(); };
                 grid.Children.Add(B);
             }
         }
