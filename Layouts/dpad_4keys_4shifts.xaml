@@ -1,0 +1,77 @@
+﻿<Window	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="D-Pad + 4 Keys + 4 Shifts" Height="1050" Width="1680"
+        AllowsTransparency="true" WindowStyle="None"
+        >
+    <Window.Background>
+        <SolidColorBrush Opacity="1"></SolidColorBrush>
+    </Window.Background>
+        <Grid Margin="0,0,0,0">
+        <Popup Name="LeftShifts"
+                   IsOpen="True"
+                   Placement="Absolute"
+                   HorizontalOffset="250"
+                   VerticalOffset="400"
+                   AllowsTransparency="True">
+            <Grid>
+                <Rectangle Width="100" Height="100" Fill="Black" Opacity="0.1"/>
+                <Button Tag="81" Margin="0,0,0,50" Opacity="0.3">L2 - Q</Button>
+                <Button Tag="87" Margin="0,50,0,0" Opacity="0.3">L1 - W</Button>
+            </Grid>  
+        </Popup>
+
+        <Popup Name="DPAD"
+               IsOpen="true"
+               Placement="Absolute"
+               HorizontalOffset="200"
+               VerticalOffset="500"
+               AllowsTransparency="True">
+            <Grid>
+                <Ellipse Width="200" Height="200" Fill="Red" Opacity="0.3"/>
+                <Button Tag="38" Margin="80,20,80,140" Opacity="0.3">UP</Button>
+                <Button Tag="40" Margin="80,140,80,20" Opacity="0.3">DOWN</Button>
+                <Button Tag="37" Margin="20,80,140,80" Opacity="0.3">LEFT</Button>
+                <Button Tag="39" Margin="140,80,20,80" Opacity="0.3" >RIGHT</Button>
+               </Grid>
+         </Popup>
+        <Popup Name="CONTROLSPAD"
+			   IsOpen="true"
+               Placement="Absolute"
+               HorizontalOffset="350"
+               VerticalOffset="500"
+               AllowsTransparency="True">
+            <Grid>
+                <Rectangle Width="100" Height="100" Fill="Gray" Opacity="0.3"/>
+                <Button Tag="160" Margin="80,120,80,40" Opacity="0.3">LSHIFT</Button>
+                <Button Tag="161" Margin="80,40,80,120" Opacity="0.3">RSHIFT</Button>
+
+            </Grid>
+        </Popup>
+        <Popup Name="RightShifts"
+                   IsOpen="True"
+                   Placement="Absolute"
+                   HorizontalOffset="550"
+                   VerticalOffset="400"
+                   AllowsTransparency="True">
+            <Grid>
+                <Rectangle Width="100" Height="100" Fill="Black" Opacity="0.1"/>
+                <Button Tag="82" Margin="0,0,0,50" Opacity="0.3">R2 - R</Button>
+                <Button Tag="69" Margin="0,50,0,0" Opacity="0.3">R1 - E</Button>
+            </Grid>
+        </Popup>
+        <Popup Name="KPAD"
+			   IsOpen="true"
+               Placement="Absolute"
+               HorizontalOffset="500"
+               VerticalOffset="500"
+               AllowsTransparency="True">
+            <Grid>
+                <Ellipse Width="200" Height="200" Fill="Blue" Opacity="0.3"/>
+                <Button Tag="65" Margin="80,20,80,140" Opacity="0.3">A</Button>
+                <Button Tag="88" Margin="80,140,80,20" Opacity="0.3">X</Button>
+                <Button Tag="72" Margin="20,80,140,80" Opacity="0.3">H</Button>
+                <Button Tag="79" Margin="140,80,20,80" Opacity="0.3">O</Button>
+            </Grid>
+        </Popup>
+    </Grid>
+</Window>
