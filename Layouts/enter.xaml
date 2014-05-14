@@ -1,0 +1,22 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Enter" Height="1050" Width="1680"
+        AllowsTransparency="true" WindowStyle="None"
+        >
+    <Window.Background>
+        <SolidColorBrush Opacity="1"></SolidColorBrush>
+    </Window.Background>
+        <Grid Margin="0,0,0,0">
+        <Popup Name="ENTER"
+               IsOpen="true"
+               Placement="Absolute"
+               HorizontalOffset="200"
+               VerticalOffset="500"
+               AllowsTransparency="True">
+            <Grid>
+               <Button Tag="13" Margin="0,0,0,0" Opacity="0.3" Width="200" Height="200">ENTER</Button>
+               </Grid>
+         </Popup>
+
+    </Grid>
+</Window>
